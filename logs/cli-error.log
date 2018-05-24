@@ -1,0 +1,34 @@
+2017-12-05 19:53:48 Error: [PDOException] SQLSTATE[HY000] [1045] Access denied for user 'my_app'@'localhost' (using password: YES) in C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\Database\Driver\PDODriverTrait.php on line 47
+Stack Trace:
+#0 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\Database\Driver\PDODriverTrait.php(47): PDO->__construct('mysql:host=loca...', 'my_app', 'secret', Array)
+#1 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\Database\Driver\Mysql.php(104): Cake\Database\Driver\Mysql->_connect('mysql:host=loca...', Array)
+#2 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\Database\Schema\BaseSchema.php(45): Cake\Database\Driver\Mysql->connect()
+#3 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\Database\Dialect\MysqlDialectTrait.php(63): Cake\Database\Schema\BaseSchema->__construct(Object(Cake\Database\Driver\Mysql))
+#4 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\Database\Schema\Collection.php(52): Cake\Database\Driver\Mysql->schemaDialect()
+#5 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\Database\Schema\CachedCollection.php(42): Cake\Database\Schema\Collection->__construct(Object(Cake\Database\Connection))
+#6 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\Database\Connection.php(368): Cake\Database\Schema\CachedCollection->__construct(Object(Cake\Database\Connection), true)
+#7 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\Database\Connection.php(387): Cake\Database\Connection->getSchemaCollection()
+#8 C:\xampp\htdocs\soporte\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(1036): Cake\Database\Connection->schemaCollection()
+#9 C:\xampp\htdocs\soporte\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(988): Bake\Shell\Task\ModelTask->_getAllTables()
+#10 C:\xampp\htdocs\soporte\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(1003): Bake\Shell\Task\ModelTask->listAll()
+#11 C:\xampp\htdocs\soporte\vendor\cakephp\bake\src\Shell\BakeShell.php(242): Bake\Shell\Task\ModelTask->listUnskipped()
+#12 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\Console\Shell.php(493): Bake\Shell\BakeShell->all()
+#13 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\Console\CommandRunner.php(141): Cake\Console\Shell->runCommand(Array, true)
+#14 C:\xampp\htdocs\soporte\bin\cake.php(12): Cake\Console\CommandRunner->run(Array)
+#15 {main}
+
+
+2017-12-05 19:55:09 Error: [RuntimeException] Unknown command `cake bale`. Run `cake --help` to get the list of valid commands. in C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\Console\CommandRunner.php on line 177
+Stack Trace:
+#0 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\Console\CommandRunner.php(137): Cake\Console\CommandRunner->getShell(Object(Cake\Console\ConsoleIo), Object(Cake\Console\CommandCollection), 'bale')
+#1 C:\xampp\htdocs\soporte\bin\cake.php(12): Cake\Console\CommandRunner->run(Array)
+#2 {main}
+
+
+2017-12-05 19:56:48 Error: [RuntimeException] Unknown command `cake bale`. Run `cake --help` to get the list of valid commands. in C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\Console\CommandRunner.php on line 177
+Stack Trace:
+#0 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\Console\CommandRunner.php(137): Cake\Console\CommandRunner->getShell(Object(Cake\Console\ConsoleIo), Object(Cake\Console\CommandCollection), 'bale')
+#1 C:\xampp\htdocs\soporte\bin\cake.php(12): Cake\Console\CommandRunner->run(Array)
+#2 {main}
+
+
