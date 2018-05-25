@@ -158,8 +158,7 @@ class TicketsController extends AppController
 
         
         if($ticket['cau'] != null){
-            $cau = $this->CauTickets->get($ticket['cau_ticket_id']);      
-            debug($cau['open_date']);      
+            $cau = $this->CauTickets->get($ticket['cau_ticket_id']);                  
         }
         if($ticket['vtex'] != null){
             $vtex = $this->VtexTickets->get($ticket['vtex_ticket_id'], [
