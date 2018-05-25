@@ -17554,3 +17554,68 @@ Stack Trace:
 #2 {main}
 
 
+2018-05-25 10:54:49 Error: [Cake\Controller\Exception\MissingActionException] Action DashboardsController::display() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'DashboardsController',
+  'action' => 'display',
+  'prefix' => '',
+  'plugin' => false,
+)
+Request URL: /
+Stack Trace:
+#0 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(119): Cake\Controller\Controller->invokeAction()
+#1 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\DashboardsController))
+#2 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\Http\BaseApplication.php(108): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#3 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#4 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(104): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(95): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 C:\xampp\htdocs\soporte\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(52): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\Http\Server.php(81): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#14 C:\xampp\htdocs\soporte\webroot\index.php(40): Cake\Http\Server->run()
+#15 {main}
+
+
+2018-05-25 11:15:19 Error: [InvalidArgumentException] Cannot convert value to integer
+Request URL: /tickets/add
+Referer URL: http://localhost/soporte/tickets/add
+Stack Trace:
+#0 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\Database\TypeConverterTrait.php(37): Cake\Database\Type\IntegerType->toDatabase(Object(Cake\ORM\Entity), Object(Cake\Database\Driver\Mysql))
+#1 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\Database\Statement\PDOStatement.php(69): Cake\Database\Statement\StatementDecorator->cast(Object(Cake\ORM\Entity), Object(Cake\Database\Type\IntegerType))
+#2 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(107): Cake\Database\Statement\PDOStatement->bindValue('c5', Object(Cake\ORM\Entity), 'integer')
+#3 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(98): Cake\Database\Statement\StatementDecorator->bindValue('c5', Object(Cake\ORM\Entity), 'integer')
+#4 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\Database\ValueBinder.php(147): Cake\Database\Log\LoggingStatement->bindValue('c5', Object(Cake\ORM\Entity), 'integer')
+#5 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\Database\Connection.php(313): Cake\Database\ValueBinder->attachTo(Object(Cake\Database\Log\LoggingStatement))
+#6 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\Database\Query.php(214): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#7 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\ORM\Table.php(1925): Cake\Database\Query->execute()
+#8 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\ORM\Table.php(1819): Cake\ORM\Table->_insert(Object(App\Model\Entity\Ticket), Array)
+#9 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\ORM\Table.php(1732): Cake\ORM\Table->_processSave(Object(App\Model\Entity\Ticket), Object(ArrayObject))
+#10 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\ORM\Table.php(1455): Cake\ORM\Table->Cake\ORM\{closure}()
+#11 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\Database\Connection.php(681): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#12 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\ORM\Table.php(1456): Cake\Database\Connection->transactional(Object(Closure))
+#13 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\ORM\Table.php(1733): Cake\ORM\Table->_executeTransaction(Object(Closure), true)
+#14 C:\xampp\htdocs\soporte\src\Controller\TicketsController.php(217): Cake\ORM\Table->save(Object(App\Model\Entity\Ticket))
+#15 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\Controller\Controller.php(440): App\Controller\TicketsController->add()
+#16 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(119): Cake\Controller\Controller->invokeAction()
+#17 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\TicketsController))
+#18 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\Http\BaseApplication.php(108): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#19 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#20 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(104): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#21 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#22 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#23 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#24 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(95): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#25 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#26 C:\xampp\htdocs\soporte\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(52): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#27 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#28 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#29 C:\xampp\htdocs\soporte\vendor\cakephp\cakephp\src\Http\Server.php(81): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#30 C:\xampp\htdocs\soporte\webroot\index.php(40): Cake\Http\Server->run()
+#31 {main}
+
+

@@ -8,7 +8,10 @@
   <h1>
     Ticket
     <small>JumboCL</small>
-  </h1>  
+    <?php
+echo $this->Html->link('Editar Ticket', array('action' => 'edit',$ticket->id), array('class'=>'btn btn-sm btn-warning btn-flat pull-right'));
+?>
+  </h1> 
 </section>
 
 <!-- Main content -->

@@ -158,7 +158,8 @@ class TicketsController extends AppController
 
         
         if($ticket['cau'] != null){
-            $cau = $this->CauTickets->get($ticket['cau_ticket_id']);            
+            $cau = $this->CauTickets->get($ticket['cau_ticket_id']);      
+            debug($cau['open_date']);      
         }
         if($ticket['vtex'] != null){
             $vtex = $this->VtexTickets->get($ticket['vtex_ticket_id'], [
@@ -213,11 +214,12 @@ class TicketsController extends AppController
                 $ticket['fizzmod_ticket_id'] = $fizz['id'];
                 $ticket['fizz'] = $fizz['id_fizz'];
             }
+            $createdTicket = $this->Tickets->save($ticket);
             
-            if ($this->Tickets->save($ticket)) {
+            if ($createdTicket) {
                 $this->Flash->success(__('The ticket has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['action' => 'view', $createdTicket['id']]);
             }
             $this->Flash->error(__('The ticket could not be saved. Please, try again.'));
         }
@@ -259,18 +261,18 @@ class TicketsController extends AppController
         $classifications = $this->ClassificationTickets->find('all', [
             'conditions' => ['name like' => $ticket['classification']]
         ]);
-        debug($classifications->count());
+        //debug($classifications->count());
         //debug($classifications->toArray()[0]['id']);
 
         if($classifications->count() == 1){//preguntar si existe
-            debug($classifications->toArray()[0]['id']);
+            //debug($classifications->toArray()[0]['id']);
             return $classifications->toArray()[0]['id'];
         }
         else{//si no existe, guardar el nuevo dato
             $classificationTicketsTable = TableRegistry::get('ClassificationTickets');
             $class = $classificationTicketsTable->newEntity();
             $class->name = $ticket['classification'];
-            return $classificationTicketsTable->save($class)['name'];
+            return $classificationTicketsTable->save($class)['id'];
         }        
     }
     public function saveTicketFizzmod($ticket){
@@ -371,7 +373,7 @@ class TicketsController extends AppController
             if ($this->Tickets->save($ticket)) {
                 $this->Flash->success(__('The ticket has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['action' => 'view', $id]);
             }
             $this->Flash->error(__('The ticket could not be saved. Please, try again.'));
         }
